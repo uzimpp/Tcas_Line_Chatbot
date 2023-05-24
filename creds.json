@@ -1,12 +1,4 @@
 {
-  "type": "service_account",
-  "project_id": "gs-tcas-line-chatbot",
-  "private_key_id": "cdc2515c5bd22d1de4282b86f500465a0764f874",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC/yhZHhPcpsMny\nnrZkcSc2VBR5uacnbzcuTO8QdjCVlpc+xRrwB8kagmwBTkAs4yJG0cLsNVLNL6q4\n8v7lJASISWeaPRXWAA9ba3f8AoWnzL6XgbnF+hf5Qq8RoHnU/J2YWuvacdTyqs6Y\nyczkPJz43NnxjBsE2lxemUHEaV3ragq7/co53WTg4nZ6Q4I93SkeaYlFOl4UiUAP\nZ/RRJcD09Pi970TrqDiQHOABSOuDcnmsmloo2NkS7EId7t3G7pBSxi15JJDn8tl3\n4D7OIJih42jxoxqGxL32oSj7tSKmtpKdCLFIgnOpQb8xW07QlxdUPsLQPnl5BN7z\nONNxzqsHAgMBAAECggEAH1hw6L0qGkBrLoH9xGUb/WH45hDPlCngpmrA3dC7Tbo1\nkPbtA/2kbXaTHr7XzUj4HAQCLCc7l7kqhBzZnRYUaY6PELiFc5rskkqlFbqhy+mH\niEKVsW5Ccc+SG7rofpok9bbSemWFYiiZfdjplFn1u9TOCA+X249cGRf06vGKU0Rn\nb5pH7qI8/IOs5qouQKlO615qakCl7tZHdx/ofnNhlgG2klbHhEvrNQ9F+2GXILqn\nt/M9IBDsr+WKLHCCcMPBGMkkIN7y7MsWOajfn8pBhF9WndF7OhNhHgKJkUzfY3s3\nnbUw51qIW5LbQ6LZsb5uDQ3JSFoBYF/TVcnxz+LnLQKBgQD6iTgQWtLsLNsH9EA/\nGnjS6v2MZUsiL41aWxadHl1ou2WhN80NpmuwXOguh0wS9uuWu6kTSrFbDbbjx09q\nPwYQnwLv2w+E/iUP4RFwLXRv6VqFz2LZd/9HXAduWidnkl72GVzPQy8BBgbfl1wG\nNo9zHYHG/uWgHUE/NANBbAT7owKBgQDD+OBvDa2hxhoMUCO4iEQBcz9c90BwUO21\njz1NJtPU8nw6TfrAgxeJzEF7oB5t+EtlW8syqCNvY8GveO5rtHg4+e6lSu5mkbwo\nFLpnyu9gEiLptemhY/QTggsSAKFjY4iHaolyqAVQDSWfOvNy9GjpnuM7Za9wN0qd\nph+KNhTJTQKBgQDt67PXLDlT2gEjW5xLkPse6dRhKKyiSWBGZ2xhRz3TwOrxoElV\n5i4sbP59eTUQaXcvTQVycaNd4fdF9rf/INzEmg0y9OiXFrbhjo595lzGDmhN3LV1\n6hP+k3HnJSx4mjMeKNXPanDP2wZZ/aaBq/ysiF//N3+ff0jAGcfhsBBHWwKBgAcG\n75VL2kQIxHpYjU9ao4Whyk3dF9RvMnbmMf6IO+RQ5Z95mFo62Sc5ycdTEIRE+P8j\ncX/Zg5vE6fcO0Q3PpNf2LlaC/1VyOFr/k0eRgU/ilpnmyf/dg60HZro4h5D2yriA\nW3lfCQG71vOEu6INnY1zAxboKIhPkz9f65WbJtepAoGBAOAtzpvlfd/DOZpmC7vi\nDAq7J+LXsX3aRbpxjXxw82ijhRs1b34lm33nXMROzVWuvdr8JCQiY0m2RfniNURi\nSWSr6t8M0JShYw6ImumlUkHuwSkwYNKq2k/7kWhTPTNtOW+ZX4J5I39ic/YMYeYP\nNOK7lbOk8YHajU3mPyRxKMqg\n-----END PRIVATE KEY-----\n",
-  "client_email": "tcas-line-chatbot@gs-tcas-line-chatbot.iam.gserviceaccount.com",
-  "client_id": "103899873088641522401",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tcas-line-chatbot%40gs-tcas-line-chatbot.iam.gserviceaccount.com"
+  "You have to get the creditentials from google sheets follow this"
+  "https://stackpython.medium.com/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99-python-%E0%B8%84%E0%B8%A7%E0%B8%9A%E0%B8%84%E0%B8%B8%E0%B8%A1-google-sheet-665a6dca077d"
 }
