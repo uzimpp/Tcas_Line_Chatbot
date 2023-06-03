@@ -142,7 +142,7 @@ def handle_message(event):
                 ImageSendMessage(original_content_url=image_url,preview_image_url=image_url))
             event.message.text = ""
 
-        elif (event.message.text == "ปฏิเสธ" or "ไม่ต้องการ")and (activated or stage == 4):
+        elif (event.message.text == "ปฏิเสธ" or event.message.text == "ไม่ต้องการ") and (activated or stage == 4):
             print("denied")
             stage = -1
             user_confirm = False
@@ -237,8 +237,10 @@ def handle_message(event):
                 event.reply_token,
                 TextSendMessage(
                     "ขออภัย กรุณาเลือกเกณฑ์การรับสมัครในรอบที่คุณสนใจ\nด้วยการพิมพ์ตัวเลข 1 - 4 โดยไม่ต้องมีจุด"))
-        elif user_errors >= 5:
+        
+        elif int(user_errors) % 5 == 0 and int(user_errors) > 1:
                 line_bot_api.push_message(event.source.user_id,TextSendMessage('หากคุณต้องการความช่วยเหลือสามารถกดเมนูวิธีการใช้งานหรือพิมพ์"วิธีการใช้งาน"ได้ในเบื้องต้น'))
+        
         else:
             user_errors = user_errors + 1
     ########################################################################################################################################################
@@ -351,7 +353,7 @@ def check_req(event):
     req_list = re.split("(?=รอบ\d{1,4})", req_str)
     if req_list[0] == '':# delete '' from the list
         req_list = req_list[1:] # most of the time there is '' in the first value of the list which possibly causes errors
-    req_list = ["รอบที่ " + element[4:].replace('\n', '\nรอบ ') for element in req_list]
+    req_list = [re.sub(r"(รอบ)(\d)", rf"รอบที่ \2 ", element.replace("\n", "คือ\nรอบ ", 1)) for element in req_list]
     if req_list == ['']:
         stage = 4
         line_bot_api.push_message(
