@@ -351,6 +351,7 @@ def check_req(event):
     req_list = re.split("(?=รอบ\d{1,4})", req_str)
     if req_list[0] == '':# delete '' from the list
         req_list = req_list[1:] # most of the time there is '' in the first value of the list which possibly causes errors
+    req_list = ["รอบที่ " + element[4:].replace('\n', '\nรอบ ') for element in req_list]
     if req_list == ['']:
         stage = 4
         line_bot_api.push_message(
