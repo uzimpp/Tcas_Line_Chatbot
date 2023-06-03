@@ -103,6 +103,7 @@ def handle_message(event):
             req_list = []
             req_list_row = []
             selected_round = ''
+            user_errors = 0
             skipped = 0
             stage = 0
             activated = True
@@ -118,6 +119,7 @@ def handle_message(event):
         # accept and deny | ยืนยันและปฏิเสธ
         elif (event.message.text == "ยืนยัน" and activated) :
             print("accepted")
+            user_errors = 0
             stage = 0
             selected_uni = ''
             worksheet = ''
@@ -155,10 +157,12 @@ def handle_message(event):
         # check major | ตรวจสอบสาขาที่มีอยู่
         elif event.message.text.upper() in university and user_confirm and stage == 0:
             selected_uni = event.message.text.upper()
+            user_errors = 0
             stage = 1
             check_major(event)
 
         elif event.message.text == "สาขา" and user_confirm and stage == 4:
+            user_errors = 0
             stage = 1
             check_major(event)
 
@@ -173,10 +177,12 @@ def handle_message(event):
         # check curriculum | ตรวจสอบหลักสูตรที่มีอยู่
         elif (event.message.text.isdigit() and 1 <= int(event.message.text) <= len(major_list)) and stage == 1 and skipped != 1:
             selected_major = major_list[int(event.message.text)-1]
+            user_errors = 0
             stage = 2
             check_curriculum(event)
 
         elif event.message.text == "หลักสูตร" and stage == 4:
+            user_errors = 0
             stage = 2
             check_curriculum(event)
 
@@ -191,10 +197,12 @@ def handle_message(event):
         # check req | ตรวจสอบเกณฑ์ในการรับสมัคร
         elif (event.message.text.isdigit() and 1 <= int(event.message.text) <= len(curriculum_list)) and stage == 2 and skipped != 1:
             selected_curriculum = curriculum_list[int(event.message.text)-1]
+            user_errors = 0
             stage = 3
             check_req(event)
 
         elif event.message.text == "รอบ" and stage == 4:
+            user_errors = 0
             stage = 3
             check_req(event)
 
@@ -209,6 +217,7 @@ def handle_message(event):
         # check round | ตรวจสอบรอบ
         elif (event.message.text.isdigit() and 1 <= int(event.message.text) <= 4) and stage == 3:
             selected_round = req_list[int(event.message.text)-1]
+            user_errors = 0
             stage = 4
             req_url = set([data[row - 1][3] for row in req_list_row])
             req_url = next(iter(req_url))
