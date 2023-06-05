@@ -247,15 +247,11 @@ def handle_message(event):
                 event.reply_token,
                 TextSendMessage(
                     "ขออภัย กรุณาเลือกเกณฑ์การรับสมัครในรอบที่คุณสนใจ\nด้วยการพิมพ์ตัวเลข 1 - 4 โดยไม่ต้องมีจุด"))
-       
-        elif ((int(user_errors) % 5) == 0) and int(user_errors) > 1:
-            print(user_errors)
-            line_bot_api.push_message(event.source.user_id,TextSendMessage('หากคุณต้องการความช่วยเหลือสามารถกดเมนูวิธีการใช้งานหรือพิมพ์"วิธีการใช้งาน"ได้ในเบื้องต้น'))
-        
+        ######################################
         else:
-            user_errors = user_errors + 1
-            print(user_errors)
-
+            user_errors += 1
+            print("user_erros", user_errors)
+        
     ########################################################################################################################################################
     # reply stickers from users | ตอบกลับ sticker จาก user
     elif isinstance(event.message, StickerMessage):
@@ -289,15 +285,17 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage("ขอบคุณสำหรับไฟล์รูปภาพ <3\nหากคุณต้องการเริ่มต้นใช้งานให้คุณกดเมนูเริ่มต้นการใช้งานได้เลย"))
-        
-    elif user_errors % 5 == 0 and user_errors != 0:
-        user_errors = 0
-        print("warn a users to check the guide")
+            
+    ########################################################################################################################################################
+    # errors warning
+    elif ((int(user_errors) % 5) == 0) and int(user_errors) > 1:
+        print(user_errors)
         line_bot_api.push_message(event.source.user_id,TextSendMessage('หากคุณต้องการความช่วยเหลือสามารถกดเมนูวิธีการใช้งานหรือพิมพ์"วิธีการใช้งาน"ได้ในเบื้องต้น'))
     
     else:
-        user_errors += 1
-        print("user_erros", user_errors)
+        user_errors = user_errors + 1
+        print(user_errors)
+        
     ########################################################################################################################################################
 
 def check_major(event):
