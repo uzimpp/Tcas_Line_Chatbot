@@ -1,5 +1,5 @@
 # Tcas_Line_Chatbot
-This chatbot is able to reply only one major
+This chatbot is able to reply only one major.
 Any further reponse such as reponding to more than one major need a huge code modification
 
 # To do
