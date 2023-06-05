@@ -119,7 +119,6 @@ def handle_message(event):
         # accept and deny | ยืนยันและปฏิเสธ
         elif (event.message.text == "ยืนยัน" and activated) :
             print("accepted")
-            user_errors = 0
             stage = 0
             selected_uni = ''
             worksheet = ''
@@ -133,6 +132,7 @@ def handle_message(event):
             selected_round = ''
             user_confirm = True
             activated = False
+            user_errors = 0
             skipped = 0
             line_bot_api.reply_message(
                 event.reply_token,
@@ -146,6 +146,7 @@ def handle_message(event):
 
         elif (event.message.text == "ปฏิเสธ" or event.message.text == "ไม่ต้องการ") and (activated or stage == 4):
             print("denied")
+            user_errors = 0
             stage = -1
             user_confirm = False
             line_bot_api.reply_message(
@@ -246,12 +247,13 @@ def handle_message(event):
                 event.reply_token,
                 TextSendMessage(
                     "ขออภัย กรุณาเลือกเกณฑ์การรับสมัครในรอบที่คุณสนใจ\nด้วยการพิมพ์ตัวเลข 1 - 4 โดยไม่ต้องมีจุด"))
-        
-        elif int(user_errors) % 5 == 0 and int(user_errors) > 1:
-                line_bot_api.push_message(event.source.user_id,TextSendMessage('หากคุณต้องการความช่วยเหลือสามารถกดเมนูวิธีการใช้งานหรือพิมพ์"วิธีการใช้งาน"ได้ในเบื้องต้น'))
+        elif ((int(user_errors) % 5) == 0) and int(user_errors) > 1:
+            print(user_errors)
+            line_bot_api.push_message(event.source.user_id,TextSendMessage('หากคุณต้องการความช่วยเหลือสามารถกดเมนูวิธีการใช้งานหรือพิมพ์"วิธีการใช้งาน"ได้ในเบื้องต้น'))
         
         else:
             user_errors = user_errors + 1
+            print(user_errors)
     ########################################################################################################################################################
     # reply stickers from users | ตอบกลับ sticker จาก user
     elif isinstance(event.message, StickerMessage):
