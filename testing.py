@@ -4,7 +4,7 @@ from flask import Flask, request, abort
 app = Flask(__name__)
 http_tunnel = ngrok.connect(5000) #your port
 
-@app.route("/callback", methods=['POST']) #replace def lambda_function with this part instead
+@app.route("/callback", methods=['POST']) #replace def lambda_handler with this part instead
 def callback():
     signature = request.headers['X-Line-Signature'] # get X-Line-Signature header value
     body = request.get_data(as_text=True)
