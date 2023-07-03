@@ -11,5 +11,5 @@ Any further reponse such as reponding to more than one major need a huge code mo
 
 
 # To be honest
-- I used ChatGPT to fix most of the problems which I have found since I started this porject from literally 0 to be able to finish this chatbot.
+- I used many tools to fix most of the problems which I have found since I started this project from literally 0 to be able to finish this chatbot.
 - I have learned so many many things such as planning a bot. For example , planning which functions should be in the chatbot or which isn't. This is able to guide me how to code quite a lot.
